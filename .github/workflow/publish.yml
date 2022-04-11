@@ -11,6 +11,6 @@ jobs:
 
             - name: Build the hello-world Docker image
               run: |
-                  echo $GH_PAT | docker login ghcr.io -u YourAccountOrGHOrgaNameHere --password-stdin
+                  echo $GH_PAT | docker login ghcr.io -u H1ghBre4k3r --password-stdin
               env:
                   GH_PAT: ${{ secrets.GH_PAT }}
