@@ -6,14 +6,14 @@ metadata:
         kompose.version: 1.26.1 (HEAD)
     creationTimestamp: null
     labels:
-        io.kompose.service: webserver
-    name: webserver
+        io.kompose.service: webserver-service
+    name: webserver-service
 spec:
     ports:
         - name: "23337"
           port: 23337
           targetPort: 3000
     selector:
-        io.kompose.service: webserver
+        io.kompose.service: webserver-deployment
 status:
     loadBalancer: {}
