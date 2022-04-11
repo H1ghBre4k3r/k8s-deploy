@@ -28,5 +28,4 @@ jobs:
             - name: Build the hello-world Docker image
               run: |
                   docker build . --tag ghcr.io/h1ghbre4k3r/k8s-deploy:latest
-                  docker run ghcr.io/h1ghbre4k3r/k8s-deploy:latest
                   docker push ghcr.io/h1ghbre4k3r/k8s-deploy:latest
