@@ -29,3 +29,15 @@ jobs:
               run: |
                   docker build . --tag ghcr.io/h1ghbre4k3r/k8s-deploy:latest
                   docker push ghcr.io/h1ghbre4k3r/k8s-deploy:latest
+            - uses: azure/k8s-set-context@v2
+              with:
+                  method: kubeconfig
+                  kubeconfig: ${{ secrets.K8S_CONFIG }}
+            - uses: Azure/k8s-deploy@v1.4
+              with:
+                  namespace: "myapp"
+                  manifests: |
+                      k8s/webserver-deployment.yaml
+                      k8s/webserver-ingress.yaml
+                      k8s/webserver-service.yaml
+                  kubectl-version: "latest"
