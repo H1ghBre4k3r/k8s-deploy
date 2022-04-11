@@ -1,0 +1,29 @@
+{
+    "name": "k8s-deploy",
+    "version": "1.0.0",
+    "description": "",
+    "main": "build/index.js",
+    "scripts": {
+        "build": "tsc",
+        "start": "node .",
+        "build:start": "npm run build && npm run start"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/H1ghBre4k3r/k8s-deploy.git"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/H1ghBre4k3r/k8s-deploy/issues"
+    },
+    "homepage": "https://github.com/H1ghBre4k3r/k8s-deploy#readme",
+    "devDependencies": {
+        "@types/express": "^4.17.13",
+        "typescript": "^4.6.3"
+    },
+    "dependencies": {
+        "express": "^4.17.3"
+    }
+}
