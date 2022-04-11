@@ -31,6 +31,6 @@ spec:
                   resources: {}
                   env:
                       - name: NAME
-                        value: "$(NAME)"
+                        value: $NAME
             restartPolicy: Always
 status: {}
