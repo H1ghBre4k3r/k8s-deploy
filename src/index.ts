@@ -12,7 +12,7 @@ const con = createConnection({
 
 con.connect((err) => {
     if (err) {
-        console.error(err);
+        console.log(err);
     }
     console.log("Connected!");
     con.end();
