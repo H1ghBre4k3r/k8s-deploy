@@ -2,18 +2,18 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
     labels:
-        pesca.service: webserver-deployment
+        io.kompose.service: webserver-deployment
     name: webserver-deployment
 spec:
     replicas: 1
     selector:
         matchLabels:
-            pesca.service: webserver-deployment
+            io.kompose.service: webserver-deployment
     strategy: {}
     template:
         metadata:
             labels:
-                pesca.service: webserver-deployment
+                io.kompose.service: webserver-deployment
         spec:
             containers:
                 - image: ghcr.io/h1ghbre4k3r/k8s-deploy:latest
