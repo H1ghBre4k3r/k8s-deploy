@@ -25,3 +25,5 @@ router.get("/", (_req, res) => {
 router.listen(3000, () => {
     console.log("Listening...");
 });
+
+console.log("Maybe this gets logged...");
