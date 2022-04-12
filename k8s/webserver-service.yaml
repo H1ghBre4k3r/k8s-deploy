@@ -6,7 +6,8 @@ metadata:
     name: webserver-service
 spec:
     ports:
-        - name: "23337"
+        - protocol: TCP
+          name: web
           port: 23337
           targetPort: 3000
     selector:

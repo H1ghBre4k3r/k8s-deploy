@@ -1,16 +1,16 @@
-apiVersion: networking.k8s.io/v1
-kind: Ingress
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
 metadata:
     name: webserver-ingress
+    namespace: default
 spec:
-    rules:
-        - host: rytlock.pesca.dev
-          http:
-              paths:
-                  - path: /
-                    pathType: Prefix
-                    backend:
-                        service:
-                            name: webserver-service
-                            port:
-                                number: 23337
+    entryPoints:
+        - websecure
+    routes:
+        - match: Host(`rytlock.pesca.dev`)
+          kind: Rule
+          services:
+              - name: webserver-service
+                port: 23337
+    tls:
+        certResolver: le
