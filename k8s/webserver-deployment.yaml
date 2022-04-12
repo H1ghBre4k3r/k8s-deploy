@@ -17,6 +17,7 @@ spec:
         spec:
             containers:
                 - image: ghcr.io/h1ghbre4k3r/k8s-deploy:latest
+                  imagePullPolicy: Always
                   name: webserver-deployment
                   ports:
                       - containerPort: 3000
