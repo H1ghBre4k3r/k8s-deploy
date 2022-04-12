@@ -36,6 +36,9 @@ jobs:
             - uses: Azure/k8s-deploy@v1.4
               with:
                   manifests: |
+                      k8s/webserver-db-claim0-pvc.yaml
+                      k8s/webserver-db-deployment.yaml
+                      k8s/webserver-db-service.yaml
                       k8s/webserver-secrets.yaml
                       k8s/webserver-deployment.yaml
                       k8s/webserver-ingress.yaml
