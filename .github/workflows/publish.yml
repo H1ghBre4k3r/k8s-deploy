@@ -33,7 +33,7 @@ jobs:
               with:
                   method: kubeconfig
                   kubeconfig: ${{ secrets.K8S_CONFIG }}
-            - name: Test something
+            - name: Generate Secrets
               run: |
                   kubectl create secret generic webserver-secret \
                     --save-config \
