@@ -35,7 +35,7 @@ jobs:
                   kubeconfig: ${{ secrets.K8S_CONFIG }}
             - name: Test something
               run: kubectl create secret generic webserver-secret \
-                  --from-literal=NAME=${{ secrets.NAME}}
+                  --from-literal=NAME="${{ secrets.NAME }}""
             - uses: Azure/k8s-deploy@v1.4
               with:
                   manifests: |
