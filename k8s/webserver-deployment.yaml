@@ -22,11 +22,8 @@ spec:
                   ports:
                       - containerPort: 3000
                   resources: {}
-                  env:
-                    - name: NAME
-                      valueFrom:
-                        secretKeyRef:
+                  envFrom:
+                      - secretRef:
                             name: webserver-secret
-                            key: NAME
             restartPolicy: Always
 status: {}
