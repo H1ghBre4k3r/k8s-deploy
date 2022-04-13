@@ -34,14 +34,14 @@ jobs:
                   method: kubeconfig
                   kubeconfig: ${{ secrets.K8S_CONFIG }}
             - name: Test something
-              run: kubectl get pods
+              run: kubectl create secret generic webserver-secret \
+                  --from-literal=NAME=${{ secrets.NAME}}
             - uses: Azure/k8s-deploy@v1.4
               with:
                   manifests: |
                       k8s/webserver-db-claim.yaml
                       k8s/webserver-db-deployment.yaml
                       k8s/webserver-db-service.yaml
-                      k8s/webserver-secrets.yaml
                       k8s/webserver-deployment.yaml
                       k8s/webserver-ingress.yaml
                       k8s/webserver-service.yaml
