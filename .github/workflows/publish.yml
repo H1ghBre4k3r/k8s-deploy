@@ -51,4 +51,3 @@ jobs:
                       k8s/webserver-ingress.yaml
                       k8s/webserver-service.yaml
                   kubectl-version: "latest"
-                  force: true
