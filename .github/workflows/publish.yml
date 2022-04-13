@@ -40,7 +40,7 @@ jobs:
                     --dry-run=client \
                     --from-literal=NAME="${{ secrets.NAME }}" \
                     -o yaml | \
-                    kubectl apply --force -f -
+                    kubectl apply -f -
             - uses: Azure/k8s-deploy@v1.4
               with:
                   manifests: |
